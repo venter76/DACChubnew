@@ -1,4 +1,4 @@
-const CACHE_NAME = 'static-cache-v2';
+const CACHE_NAME = 'static-cache-v3';
 const STATIC_ASSETS = [
     '/',  // Assuming '/home' serves home.ejs
     '/login', // Assuming '/login' serves login.ejs
@@ -6,6 +6,7 @@ const STATIC_ASSETS = [
     '/iconLarge_2.png',
     '/iconLarge_3.png',
     'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css',
+    'https://cdn.jsdelivr.net/npm/jsqr@1.3.1/dist/jsQR.js'
     // Add other static assets here
 ];
 
