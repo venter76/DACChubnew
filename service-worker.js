@@ -1,6 +1,6 @@
-const CACHE_NAME = 'static-cache-v4';
+const CACHE_NAME = 'static-cache-v5';
 const STATIC_ASSETS = [
-    '/',  // Assuming '/home' serves home.ejs
+    '/home',  // Assuming '/home' serves home.ejs
     '/login', // Assuming '/login' serves login.ejs
     '/iconLarge_1.png',
     '/iconLarge_2.png',
