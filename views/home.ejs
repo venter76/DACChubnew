@@ -32,6 +32,16 @@
     }
 </style>
 
+<style>
+    .btn-info {
+        min-width: 150px;  /* All buttons will be at least 150px wide */
+        white-space: nowrap;  /* Prevents the text from wrapping */
+        overflow: hidden;  /* Keeps the content from overflowing */
+        text-overflow: ellipsis;  /* Adds an ellipsis if the text is too long to fit */
+    }
+    </style>
+    
+
 
   
  
@@ -58,9 +68,11 @@
     
 
     <div class="container mt-8">
+        <br>
+        
         <form action="/redirect" method="post" class="text-center">
-            <button type="submit" name="buttonIndex" value="1" class="btn btn-info bg-opacity-25 rounded-pill mb-2 d-block mx-auto">DACCtrac</button>
-            <button type="submit" name="buttonIndex" value="2" class="btn btn-info bg-opacity-25 rounded-pill mb-2 d-block mx-auto">DACCpac</button>
+            <button type="submit" name="buttonIndex" value="1" class="btn btn-info bg-opacity-25 rounded-pill mb-2 d-block mx-auto">DACCtrac   </button>
+            <button type="submit" name="buttonIndex" value="2" class="btn btn-info bg-opacity-25 rounded-pill mb-2 d-block mx-auto">DACCpac    </button>
             <button type="submit" name="buttonIndex" value="3" class="btn btn-info bg-opacity-25 rounded-pill mb-2 d-block mx-auto">MedWebTools</button>
         </form>
     </div>
