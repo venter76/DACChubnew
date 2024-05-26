@@ -12,12 +12,27 @@
 
     <style>
       body {
-            background-color: #273749; /* Change this color code to your preferred shade of blue */
-        }
+            background-color: #008B8B; /* Change this color code to your preferred shade of blue */
+            padding-bottom: 50px;
+          }
+        
+    .custom-footer {
+        background-color: #44706e !important; /* New background color */
+    }
 
+    .sticky-footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 1000;
+    }
 
-
+    body {
+        padding-bottom: 50px; /* Ensure this is enough to accommodate the footer height */
+    }
 </style>
+
+
   
  
 
@@ -33,18 +48,18 @@
     <div class="container-fluid"> <!-- Use container-fluid for full width -->
         <div class="row">
             <div class="col-12"> <!-- Ensure column spans full width -->
-                <h3 class="text-center text-white py-2" style="background-color: #6c7f93;">DACChub</h3>
+                <h3 class="text-center text-white py-2" style="background-color: #44706e;">DACChub</h3>
             </div>
         </div>
 
     </div>
     
 
-    <div class="container mt-5">
+    <div class="container mt-8">
         <form action="/redirect" method="post" class="text-center">
-            <button type="submit" name="buttonIndex" value="1" class="btn btn-success bg-opacity-25 rounded-pill mb-2 d-block mx-auto">DACCtrac</button>
-            <button type="submit" name="buttonIndex" value="2" class="btn btn-success bg-opacity-25 rounded-pill mb-2 d-block mx-auto">DACCpac</button>
-            <button type="submit" name="buttonIndex" value="3" class="btn btn-success bg-opacity-25 rounded-pill mb-2 d-block mx-auto">MedWebTools</button>
+            <button type="submit" name="buttonIndex" value="1" class="btn btn-info bg-opacity-25 rounded-pill mb-2 d-block mx-auto">DACCtrac</button>
+            <button type="submit" name="buttonIndex" value="2" class="btn btn-info bg-opacity-25 rounded-pill mb-2 d-block mx-auto">DACCpac</button>
+            <button type="submit" name="buttonIndex" value="3" class="btn btn-info bg-opacity-25 rounded-pill mb-2 d-block mx-auto">MedWebTools</button>
         </form>
     </div>
 
@@ -65,15 +80,15 @@
             <script src="https://cdn.jsdelivr.net/npm/jsqr@1.3.1/dist/jsQR.js"></script>
         </body>
 
-        <footer class="sticky-footer bg-light">
+        <footer class="sticky-footer custom-footer">
           <div class="container-fluid">
-            <div class="row justify-content-end">
-              <div class="col-auto">
-                <h6>Bray Road Solutions 2023</h6>
+              <div class="row justify-content-end">
+                  <div class="col-auto">
+                      <h6>Bray Road Solutions 2023</h6>
+                  </div>
               </div>
-            </div>
           </div>
-        </footer>
+      </footer>
         
         
         </html>
