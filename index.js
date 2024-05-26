@@ -214,7 +214,7 @@ app.get("/", function(req, res) {
   // Check if user is logged in by looking for session userId
   if (req.session.userId) {
     // User is logged in, render the home page with "Hello World"
-    res.render('home', { message: 'Hello World' });
+    res.render('home');
   } else {
     // User is not logged in, render the login page
     res.render('login', { message: req.flash('loginMessage') });
