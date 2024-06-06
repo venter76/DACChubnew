@@ -83,7 +83,6 @@ app.use((req, res, next) => {
 
 
 
-  
 const hubuserSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -96,11 +95,15 @@ const hubuserSchema = new mongoose.Schema({
   password: {
     type: String,
     required: [true, 'Please provide a password']
+  },
+  count: {
+    type: Number,
+    default: 0
   }
 });
 
 const Hubuser = mongoose.model('Hubuser', hubuserSchema);
-
+ 
 
 const urlSchema = new mongoose.Schema({
   index: {
@@ -210,16 +213,41 @@ app.post('/login', async (req, res) => {
 
 
 
-app.get("/", function(req, res) {
-  // Check if user is logged in by looking for session userId
+app.get("/", async function(req, res) {
   if (req.session.userId) {
-    // User is logged in, render the home page with "Hello World"
-    res.render('home');
+    try {
+      const user = await Hubuser.findById(req.session.userId);
+      if (!user) {
+        return res.redirect('/login');
+      }
+
+      // Increment the count
+      user.count += 1;
+      console.log(`User count after increment: ${user.count}`);
+      await user.save();
+
+      // Check if the modal should be displayed
+      const shouldShowModal = user.count <= 3;
+      console.log(`shouldShowModal value: ${shouldShowModal}`);
+
+      res.render('home', { shouldShowModal });
+    } catch (error) {
+      console.error('Error fetching user:', error);
+      res.redirect('/login');
+    }
   } else {
-    // User is not logged in, render the login page
     res.render('login', { message: req.flash('loginMessage') });
   }
 });
+
+app.get("/android", (req, res) => {
+  res.render('android'); // Ensure you have an android.ejs file
+});
+
+app.get("/iphone", (req, res) => {
+  res.render('iphone'); // Ensure you have an iphone.ejs file
+});
+
 
  
 
@@ -241,7 +269,28 @@ app.post('/redirect', async (req, res) => {
 });
 
 
-  
+ // Route to handle the form submission
+app.post("/android", async (req, res) => {
+  const { buttonValue } = req.body;
+  const userId = req.session.userId; // Ensure the user is authenticated and their ID is stored in the session
+
+  try {
+    const user = await Hubuser.findById(userId);
+    if (!user) {
+      return res.redirect('/login');
+    }
+
+    // Update the user's count to the value of 343
+    user.count = parseInt(buttonValue, 10);
+    await user.save();
+
+    // Redirect back to the home page
+    res.redirect('/');
+  } catch (error) {
+    console.error('Error updating user count:', error);
+    res.redirect('/login');
+  }
+}); 
     
   
 

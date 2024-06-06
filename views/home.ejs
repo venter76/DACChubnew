@@ -54,45 +54,71 @@
 
 
 <body>
-
-    <div class="container-fluid"> <!-- Use container-fluid for full width -->
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-12"> <!-- Ensure column spans full width -->
+            <div class="col-12">
                 <h3 class="text-center text-white py-2" style="background-color: #44706e;">DACChub</h3>
             </div>
         </div>
-
     </div>
-    <br>
-    <br>
-    
-
+    <br><br>
     <div class="container mt-8">
         <br>
-        
         <form action="/redirect" method="post" class="text-center">
-            <button type="submit" name="buttonIndex" value="1" class="btn btn-info bg-opacity-25 rounded-pill mb-2 d-block mx-auto">DACCtrac   </button>
-            <button type="submit" name="buttonIndex" value="2" class="btn btn-info bg-opacity-25 rounded-pill mb-2 d-block mx-auto">DACCpac    </button>
+            <button type="submit" name="buttonIndex" value="1" class="btn btn-info bg-opacity-25 rounded-pill mb-2 d-block mx-auto">DACCtrac</button>
+            <button type="submit" name="buttonIndex" value="2" class="btn btn-info bg-opacity-25 rounded-pill mb-2 d-block mx-auto">DACCpac</button>
             <button type="submit" name="buttonIndex" value="3" class="btn btn-info bg-opacity-25 rounded-pill mb-2 d-block mx-auto">MedWebTools</button>
         </form>
     </div>
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
-            </script>
-            <script>
-            if ('serviceWorker' in navigator) {
-              navigator.serviceWorker.register('/service-worker.js')
-              .then(function(registration) {
-                console.log('Service Worker registered with scope:', registration.scope);
-              })
-              .catch(function(error) {
-                console.error('Service Worker registration failed:', error);
-              });
-            }
-            </script>
-            
-            <script src="https://cdn.jsdelivr.net/npm/jsqr@1.3.1/dist/jsQR.js"></script>
-        </body>
+    <!-- Modal -->
+    <div class="modal fade" id="downloadModal" tabindex="-1" aria-labelledby="downloadModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="downloadModalLabel">Download Our App</h5>
+                    
+                </div>
+                <div class="modal-body">
+                    Download the app for better access on your device.
+                    <br><br>
+                    <a href="/android" class="text-decoration-none">Download for Android device</a><br>
+                    <a href="/iphone" class="text-decoration-none">Download for iPhone device</a><br>
+                    <a href="#" class="text-decoration-none" data-bs-dismiss="modal">Do not download now / Previosly downloaded</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+      .then(function(registration) {
+        console.log('Service Worker registered with scope:', registration.scope);
+      })
+      .catch(function(error) {
+        console.error('Service Worker registration failed:', error);
+      });
+    }
+</script>
+
+<script>
+   // Pass the shouldShowModal variable from the server side to the client side
+   var showModal = <%= JSON.stringify(shouldShowModal) %>;
+
+console.log('showModal:', showModal, typeof showModal);  // Debugging line to check value and type
+
+if (showModal) {
+  console.log('Showing modal');
+  var downloadModal = new bootstrap.Modal(document.getElementById('downloadModal'));
+  downloadModal.show();
+} else {
+  console.log('Not showing modal');
+}
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.3.1/dist/jsQR.js"></script>
+</body>
 
         <footer class="sticky-footer custom-footer">
           <div class="container-fluid">
