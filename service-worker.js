@@ -1,4 +1,4 @@
-const CACHE_NAME = 'static-cache-v5';
+const CACHE_NAME = 'static-cache-v6';
 const STATIC_ASSETS = [
     '/home',  // Assuming '/home' serves home.ejs
     '/login', // Assuming '/login' serves login.ejs
