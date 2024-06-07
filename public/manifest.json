@@ -23,7 +23,8 @@
       {
         "src": "/iconLarge_2.png",
         "sizes": "192x192",
-        "type": "image/png"
+        "type": "image/png",
+        "purpose": "any"
       },
       {
         "src": "/iconLarge_3.png",
