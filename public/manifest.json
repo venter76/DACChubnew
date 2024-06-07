@@ -9,11 +9,7 @@
   "background_color": "#008B8B",
   "orientation": "any",
   "icons": [
-    {
-      "src": "/iconLarge.png",
-      "sizes": "72x72",
-      "type": "image/png"
-    },
+    
     {
       "src": "/iconLarge_1.png",
       "sizes": "96x96",
