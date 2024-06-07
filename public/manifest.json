@@ -1,5 +1,5 @@
 {
-    
+
 "name": "DACChub",
 "short_name": "DACChub",
 "start_url": "/",
@@ -34,10 +34,10 @@
     ],
     "screenshots" : [
   {
-    "src": "screenshot.jpg",
+    "src": "/Your paragraph text.png",
     "sizes": "1280x720",
-    "type": "image/jpg",
-    "platform": "wide",
+    "type": "image/png",
+    "platform": "wide"
   }
 ]
 
