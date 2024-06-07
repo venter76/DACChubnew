@@ -2,12 +2,20 @@
   "name": "DACChub",
   "short_name": "DACChub",
   "start_url": "/",
+  "id": "home",
+  
   "display": "standalone",
   "description": "Equipment Location Tracker",
   "dir": "auto",
   "theme_color": "#008B8B",
   "background_color": "#008B8B",
   "orientation": "any",
+
+  "launch_handler": {
+    "client_mode": ["navigate-existing", "auto"]
+},
+
+
   "icons": [
     
     {

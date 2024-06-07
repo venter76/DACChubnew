@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.herokuapp.dacchub_0cd8db2abdfd.twa",
+        "sha256_cert_fingerprints": ["C6:1E:1C:F2:74:29:22:18:A3:89:C6:4C:E4:24:F3:B9:7B:83:99:BB:2A:24:B8:F8:B9:48:24:F1:5E:82:01:E2"]
+      }
+    }]
